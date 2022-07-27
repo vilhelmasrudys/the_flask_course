@@ -1,0 +1,16 @@
+<body>
+    <h1>Straipsniai</h1>
+    <br><br>
+    {% for straipsnis in data %}
+        {% if straipsnis['status'] == 'published' %}
+            <h3>{{ straipsnis['pavadinimas'] }}</h3>
+            <p>{{ straipsnis['data'] }}, {{ straipsnis['autorius'] }}</p>
+            <hr>
+            <p>{{ straipsnis['tekstas'] }}</p>
+            <hr>
+        {% else %} 
+            <h3>{{ straipsnis['pavadinimas'] }}<i> Publikavimas laikinai isjungtas </i></h3>
+        {% endif %}   
+        <br><br>
+    {% endfor %}
+</body>
